@@ -1,3 +1,9 @@
+:root {
+  --container-padding: 20px;
+  --container-margin: 40px;
+  --container-margin-bigscreen: 15vh;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -144,24 +150,59 @@
 
 body {
   font: normal normal 13px/16px "Raleway", sans-serif;
-  background: #dfdfdf;
+  background: #eef5ff;
+  line-height: 1.15;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
 }
 
 .container {
-  padding: 20px;
-  width: 300px;
-  margin: 0 auto;
-  margin-top: 40px;
-  background: white;
-  border-radius: 5px;
+  padding: 0 var(--container-padding) var(--container-padding);
+  width: 100%;
+  max-width: 500px;
+  max-height: calc(100vh - 2 * var(--container-margin));
+  margin: var(--container-margin);
+  background: rgb(255, 245, 106);
+  border: solid black 0.5px;
+  border-radius: 15px;
+  overflow: auto;
+}
+
+@media all and (min-height: 1799px) {
+  .container {
+    margin-top: var(--container-margin-bigscreen);
+    margin-bottom: var(--container-margin-bigscreen);
+    max-height: calc(100vh - 2 * var(--container-margin-bigscreen));
+  }
+}
+
+@media all and (max-width: 364px) {
+  .container {
+    margin: 5px;
+  }
+}
+
+#sticky-header {
+  position: sticky;
+  top: 0;
+  background: rgb(255, 245, 106);
+}
+
+h2 {
+  margin: 0 0 13px;
+  padding-top: 33px;
 }
 
 form {
   display: inline-block;
+  margin: 0 0 13px;
 }
 
 input {
   padding: 4px 15px 4px 5px;
+  width: 100%;
 }
 
 #button {
@@ -170,7 +211,7 @@ input {
   color: #fff;
   border-radius: 5px;
   text-align: center;
-  margin-top: 2px;
+  margin: 2px 0 13px;
   padding: 5px 15px;
 }
 
@@ -180,12 +221,16 @@ input {
 }
 
 ol {
-  padding-left: 20px;
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
 }
 
 ol li {
   padding: 5px;
-  color: #000;
+  color: rgb(66, 66, 66);
+  font: normal 20px "Caveat", sans-serif;
+  background: white;
 }
 
 ol li:nth-child(even) {
@@ -204,10 +249,11 @@ li:hover {
   display: none;
 }
 
-li > .crossoutbutton {
+li > button {
   background: none;
   border: none;
   float: right;
-  color: #025f70;
-  font-weight: 800;
+  font-size: 16px;
+  font-weight: 700;
+  color: inherit;
 }
