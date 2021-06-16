@@ -162,10 +162,10 @@ body {
 
 .container {
   padding: 0 var(--container-padding) var(--container-padding);
+  margin: var(--container-margin);
   width: 100%;
   max-width: 500px;
   max-height: calc(100vh - 2 * var(--container-margin));
-  margin: var(--container-margin);
   background: rgb(255, 245, 106);
   border: solid black 0.5px;
   border-radius: 15px;
@@ -183,6 +183,8 @@ body {
 @media all and (max-width: 364px) {
   .container {
     margin: 5px;
+    height: calc(100vh - 10px);
+    max-height: none;
   }
 }
 

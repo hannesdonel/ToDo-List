@@ -5,7 +5,6 @@ let error = $(
 header.append(error);
 
 function newItem() {
-
   //1. Adding a new item to the list of items:
 
   let inputValue = $("#input").val();
@@ -17,6 +16,9 @@ function newItem() {
   }
 
   if (inputValue === "") {
+    error.removeClass("delete");
+  } else if (/[<>"`'$/\\{ }]/.test(inputValue)) {
+    error.text("Special characters are not allowed!");
     error.removeClass("delete");
   } else {
     let list = $("#list");
