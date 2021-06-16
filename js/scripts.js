@@ -1,81 +1,86 @@
-let header = document.getElementById("sticky-header");
-let error = document.createElement("span");
-error.classList.add("validationError");
-error.classList.add("delete");
-error.innerText = "Please type your item to add!";
-header.appendChild(error);
+let header = $("#sticky-header");
+let error = $(
+  '<span class="validationError delete">"Please type your item to add!"</span>'
+);
+header.append(error);
 
 function newItem() {
+
   //1. Adding a new item to the list of items:
-  let li = document.createElement("li");
-  let inputValue = document.getElementById("input").value;
-  let text = document.createTextNode(inputValue);
-  li.appendChild(text);
+
+  let inputValue = $("#input").val();
+  let li = $("<li></li>");
+  li.append(inputValue);
 
   function clearInput() {
-    document.getElementById("input").value = "";
+    $("#input").val("");
   }
 
   if (inputValue === "") {
-    error.classList.remove("delete");
+    error.removeClass("delete");
   } else {
-    let list = document.querySelector("#list");
-    list.appendChild(li);
+    let list = $("#list");
+    list.append(li);
     clearInput();
-    document.getElementById("button").style.backgroundColor = "#fc999b";
+    $("#button").css("background-color", "#fc999b");
   }
 
-  textField.addEventListener("input", function () {
-    let inputValue = document.getElementById("input").value;
+  textField.on("input", function () {
+    let inputValue = $("#input").value;
     if (inputValue !== "") {
-      error.classList.add("delete");
+      error.addClass("delete");
     }
   });
 
   //2. Crossing out an item from the list of items:
+
   function crossOut() {
-    li.classList.toggle("strike");
+    li.toggleClass("strike");
   }
 
-  li.addEventListener("dblclick", crossOut);
+  li.on("dblclick", crossOut);
 
   //3(i). Adding the delete button "X":
-  let crossOutButton = document.createElement("button");
-  crossOutButton.appendChild(document.createTextNode("X"));
-  li.appendChild(crossOutButton);
 
-  crossOutButton.addEventListener("click", deleteListItem);
+  let crossOutButton = $("<button>X</button>");
+  li.append(crossOutButton);
+
+  crossOutButton.on("click", deleteListItem);
+
   //3(ii). Adding CLASS DELETE (DISPLAY: NONE) from the css:
+
   function deleteListItem() {
-    li.classList.add("delete");
+    li.remove();
   }
+
   // 4. Reordering the items:
+
   $("#list").sortable();
   function holdItem() {
-    li.style.cursor = "grabbing";
+    li.css("cursor", "grabbing");
   }
   function releaseItem() {
-    li.style.cursor = "grab";
+    li.css("cursor", "grab");
   }
 
-  li.addEventListener("mousedown", holdItem);
-  li.addEventListener("mouseup", releaseItem);
+  li.on("mousedown", holdItem);
+  li.on("mouseup", releaseItem);
 }
 
 // Change "Add" button color on input
 
-let textField = document.querySelector("form");
-let addButton = document.getElementById("button");
-textField.addEventListener("input", function buttonActive() {
-  let inputValue = document.getElementById("input").value;
+let textField = $("form");
+let addButton = $("#button");
+textField.on("input", function buttonActive() {
+  let inputValue = $("#input").val();
   if (inputValue !== "") {
-    addButton.style.backgroundColor = "#ff5557";
+    addButton.css("background-color", "#ff5557");
   } else {
-    addButton.style.backgroundColor = "#fc999b";
+    addButton.css("background-color", "#fc999b");
   }
 });
 
-textField.addEventListener("submit", function (e) {
+textField.on("submit", function (e) {
   e.preventDefault();
   newItem();
 });
