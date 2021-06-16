@@ -31,9 +31,14 @@
         </p>
 
         <form name="toDoList">
-          <input type="text" name="ListItem" id="input" />
+          <input
+            type="text"
+            name="ListItem"
+            id="input"
+            placeholder="Add your ToDo"
+          />
         </form>
-        <div onkeydown="newItem()" onclick="newItem()" id="button">Add</div>
+        <div onclick="newItem()" id="button">Add</div>
       </div>
       <ol id="list"></ol>
     </main>

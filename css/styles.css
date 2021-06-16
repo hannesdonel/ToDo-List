@@ -1,3 +1,5 @@
+/* General styling */
+
 :root {
   --container-padding: 20px;
   --container-margin: 40px;
@@ -149,7 +151,7 @@
 }
 
 body {
-  font: normal normal 13px/16px "Raleway", sans-serif;
+  font: normal 13px "Raleway", sans-serif;
   background: #eef5ff;
   line-height: 1.15;
   display: flex;
@@ -184,6 +186,10 @@ body {
   }
 }
 
+/* Styling of the list itself */
+
+/* Header */
+
 #sticky-header {
   position: sticky;
   top: 0;
@@ -213,12 +219,24 @@ input {
   text-align: center;
   margin: 2px 0 13px;
   padding: 5px 15px;
+  transition: opacity 0.1s;
+  transition: color 0.1s;
 }
 
 #button:hover {
   cursor: pointer;
-  opacity: 0.8;
+  opacity: 0.6;
+  color: black;
 }
+
+.validationError {
+  display: block;
+  font-size: 11px;
+  color: red;
+  margin-bottom: 13px;
+}
+
+/* List */
 
 ol {
   padding-left: 0;
@@ -242,7 +260,7 @@ ol li:nth-child(even) {
 }
 
 li:hover {
-  cursor: pointer;
+  cursor: grab;
 }
 
 .delete {
@@ -250,6 +268,7 @@ li:hover {
 }
 
 li > button {
+  cursor: pointer;
   background: none;
   border: none;
   float: right;
