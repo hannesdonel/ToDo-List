@@ -1,31 +1,34 @@
+let header = document.getElementById("sticky-header");
+let error = document.createElement("span");
+error.classList.add("validationError");
+error.classList.add("delete");
+error.innerText = "Please type your item to add!";
+header.appendChild(error);
+
 function newItem() {
   //1. Adding a new item to the list of items:
-  let header = document.getElementById("sticky-header");
-  let error = document.createElement("span");
   let li = document.createElement("li");
   let inputValue = document.getElementById("input").value;
   let text = document.createTextNode(inputValue);
-  error.classList.add("validationError");
-  error.innerText = "Please type your item to add!";
   li.appendChild(text);
-  
+
   function clearInput() {
     document.getElementById("input").value = "";
   }
-  
+
   if (inputValue === "") {
-    header.appendChild(error);
+    error.classList.remove("delete");
   } else {
     let list = document.querySelector("#list");
     list.appendChild(li);
     clearInput();
     document.getElementById("button").style.backgroundColor = "#fc999b";
   }
-  
+
   textField.addEventListener("input", function () {
     let inputValue = document.getElementById("input").value;
     if (inputValue !== "") {
-      header.removeChild(error);
+      error.classList.add("delete");
     }
   });
 
