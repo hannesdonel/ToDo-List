@@ -1,21 +1,19 @@
 let header = $("#sticky-header");
-let error = $(
-  '<span class="validationError delete">"Please type your item to add!"</span>'
-);
+let error = $('<span class="validationError delete"></span>');
 header.append(error);
 
 function newItem() {
   //1. Adding a new item to the list of items:
 
   let inputValue = $("#input").val();
-  let li = $("<li></li>");
-  li.append(inputValue);
+  let li = $(`<li>${inputValue}</li>`);
 
   function clearInput() {
     $("#input").val("");
   }
 
   if (inputValue === "") {
+    error.text("Please type your item to add!");
     error.removeClass("delete");
   } else if (/[<>"`'$/\\{ }]/.test(inputValue)) {
     error.text("Special characters are not allowed!");
@@ -73,7 +71,7 @@ function newItem() {
 
 let textField = $("form");
 let addButton = $("#button");
-textField.on("input", function buttonActive() {
+textField.on("input", function () {
   let inputValue = $("#input").val();
   if (inputValue !== "") {
     addButton.css("background-color", "#ff5557");
