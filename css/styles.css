@@ -183,7 +183,6 @@ body {
 @media all and (max-width: 364px) {
   .container {
     margin: 5px;
-    height: calc(100vh - 10px);
     max-height: none;
   }
 }
