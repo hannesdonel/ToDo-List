@@ -1,12 +1,12 @@
-let header = $("#sticky-header");
-let error = $('<span class="validationError delete"></span>');
+const header = $("#sticky-header");
+const error = $("<span class=\"validationError delete\"></span>");
 header.append(error);
 
 function newItem() {
-  //1. Adding a new item to the list of items:
+  // 1. Adding a new item to the list of items:
 
-  let inputValue = $("#input").val();
-  let li = $(`<li>${inputValue}</li>`);
+  const inputValue = $("#input").val();
+  const li = $(`<li>${inputValue}</li>`);
 
   function clearInput() {
     $("#input").val("");
@@ -19,20 +19,20 @@ function newItem() {
     error.text("Special characters are not allowed!");
     error.removeClass("delete");
   } else {
-    let list = $("#list");
+    const list = $("#list");
     list.append(li);
     clearInput();
     $("#button").css("background-color", "#fc999b");
   }
 
-  textField.on("input", function () {
-    let inputValue = $("#input").value;
-    if (inputValue !== "") {
+  textField.on("input", () => {
+    const inputValueNew = $("#input").value;
+    if (inputValueNew !== "") {
       error.addClass("delete");
     }
   });
 
-  //2. Crossing out an item from the list of items:
+  // 2. Crossing out an item from the list of items:
 
   function crossOut() {
     li.toggleClass("strike");
@@ -40,14 +40,14 @@ function newItem() {
 
   li.on("dblclick", crossOut);
 
-  //3(i). Adding the delete button "X":
+  // 3(i). Adding the delete button "X":
 
-  let crossOutButton = $("<button>X</button>");
+  const crossOutButton = $("<button>X</button>");
   li.append(crossOutButton);
 
   crossOutButton.on("click", deleteListItem);
 
-  //3(ii). Adding CLASS DELETE (DISPLAY: NONE) from the css:
+  // 3(ii). Adding CLASS DELETE (DISPLAY: NONE) from the css:
 
   function deleteListItem() {
     li.remove();
@@ -70,9 +70,9 @@ function newItem() {
 // Change "Add" button color on input
 
 let textField = $("form");
-let addButton = $("#button");
-textField.on("input", function () {
-  let inputValue = $("#input").val();
+const addButton = $("#button");
+textField.on("input", () => {
+  const inputValue = $("#input").val();
   if (inputValue !== "") {
     addButton.css("background-color", "#ff5557");
   } else {
@@ -80,7 +80,7 @@ textField.on("input", function () {
   }
 });
 
-textField.on("submit", function (e) {
+textField.on("submit", (e) => {
   e.preventDefault();
   newItem();
 });
