@@ -1,15 +1,24 @@
-# Pokédex
+# ToDo List
+
+_A JavaScript/jQuery App to take notes_
 
 ## Project description
 
-This is a little application listing several Pokémons and relevant information about them. I've done all programming from scratch with JavaScript. Have fun!
+This is a simple ToDo application. The goal was to use jQuery only instead of vanilla JavaScript.
 
 ## How to get the project running
 
-Just visit the gh-pages site and browse your favorite Pokémon.
+Visit the gh-pages site. The App allows you to add notes to a list, reorder them, delete them or mark them as done by simple double clicking them.
 
-## Project dependencies (e.g., JavaScript version, ESLint rules)
+## Project dependencies
 
-JavaScript formatter: Prettier (Standard rules)
+HTML
+CSS
+JavaScript
+Prettier for HTML (standard rules)
+Stylelint for CSS (rules are in the repository)
+ESLint for JavaScript (rules are in the repository)
 
 ## Which API the project uses
+
+none
