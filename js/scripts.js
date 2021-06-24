@@ -56,8 +56,6 @@ function newItem() {
   // 4. Reordering the items:
 
   $("#list").sortable();
-  $("#list").on("taphold", sortable());
-
   function holdItem() {
     li.css("cursor", "grabbing");
   }
