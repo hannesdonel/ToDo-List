@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "A little ToDo tool written in jQuery.",
   "scripts": {
-    "dev": "npx parcel index.html"
+    "dev": "mkdir dist || rm -r dist && parcel index.html",
+    "build": "mkdir dist || rm -r dist && parcel build index.html --public-url ./",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -19,6 +21,7 @@
     "eslint": "^7.29.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.23.4",
+    "gh-pages": "^3.2.3",
     "parcel": "^2.0.1",
     "stylelint": "^14.1.0",
     "stylelint-config-recommended": "^6.0.0"
