@@ -103,7 +103,7 @@ input {
 /* List */
 
 li {
-  transition: 0.25s;
+  transition: 0.15s;
 }
 
 #list,
@@ -111,6 +111,10 @@ li {
   padding-left: 0;
   list-style: none;
   margin: 0;
+}
+
+#list {
+  padding-bottom: 15px;
 }
 
 #list li,
@@ -163,6 +167,11 @@ li > button {
 }
 
 /* Checked List */
+
+#checkedList {
+  border-top: 1px solid black;
+  padding-top: 15px;
+}
 
 #checkedList li {
   background: rgba(128, 128, 128, 0.288);

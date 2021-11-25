@@ -16,7 +16,7 @@ textField.on( "input", () => {
     addButton.css( "background-color", "#fc999b" );
     error.addClass( "delete" );
     validation = false;
-  } else if ( /[<>"`'$/\\{ }]/.test( inputValue ) ) {
+  } else if ( /[<>"`'$/\\{}]/.test( inputValue ) ) {
     addButton.css( "background-color", "#fc999b" );
     error.text( "Special characters are not allowed!" );
     error.removeClass( "delete" );
