@@ -4,7 +4,7 @@ A little, fully responsive ToDo list.
 
 <a href="https://hannesdonel.github.io/ToDo-List/">Use the app.</a>
 
-<img src="./assets/example1.png" alt="Example Image" width="50%">
+<img src="./assets/example1.png" alt="Example Image" width="100%">
 
 
 ## Technologies
