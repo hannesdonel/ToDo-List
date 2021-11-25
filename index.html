@@ -4,7 +4,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="robots" content="noindex" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+    />
     <title>ToDo List</title>
     <link
       rel="stylesheet"
@@ -20,16 +23,9 @@
   </head>
 
   <body>
-    <main class="container">
+    <main class="container fadeIn">
       <div id="sticky-header">
         <h2>ToDo List</h2>
-        <p>
-          <em>
-            Double click to mark an item off, click on "X" to delete an item,
-            drag items to reorder.</em
-          >
-        </p>
-
         <form name="toDoList">
           <input
             type="text"
@@ -41,6 +37,7 @@
         <div onclick="newItem()" id="button">Add</div>
       </div>
       <ol id="list"></ol>
+      <ol id="checkedList"></ol>
     </main>
     <script
       src="https://code.jquery.com/jquery-3.5.1.js"
@@ -52,7 +49,7 @@
       integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
       crossorigin="anonymous"
     ></script>
-    <script src="jquery.ui.touch-punch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
     <script src="./js/scripts.js"></script>
   </body>
 </html>
