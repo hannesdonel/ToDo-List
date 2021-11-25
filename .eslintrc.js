@@ -2,19 +2,21 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    jquery: true,
+    jquery: true
   },
-  extends: ["airbnb-base"],
+  extends: [ "airbnb-base", "jquery" ],
   parserOptions: {
     ecmaVersion: 12,
-    sourceType: "module",
+    sourceType: "module"
   },
   rules: {
-    quotes: ["error", "double"],
+    quotes: [ "error", "double" ],
     "no-use-before-define": "off",
-    "func-names": ["error", "never"],
+    "func-names": [ "error", "never" ],
     "no-alert": "off",
     "no-console": "off",
-    "no-plusplus": ["error", { allowForLoopAfterthoughts: true }],
-  },
+    "no-plusplus": [ "error", { allowForLoopAfterthoughts: true } ],
+    "lines-around-comment": "off",
+    "padded-blocks": "off"
+  }
 };
