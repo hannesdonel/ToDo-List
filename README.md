@@ -1,24 +1,30 @@
-# ToDo List
+# ToDo list
 
-_A JavaScript/jQuery App to take notes_
+A little, fully responsive ToDo list.
 
-## Project description
+<a href="https://hannesdonel.github.io/ToDo-List/">Use the app.</a>
 
-This is a simple ToDo application. The goal was to use jQuery only instead of vanilla JavaScript.
+<img src="./assets/example1.png" alt="Example Image" width="50%">
 
-## How to get the project running
 
-Visit the gh-pages site. The App allows you to add notes to a list, reorder them, delete them or mark them as done by simple double clicking them.
+## Technologies
 
-## Project dependencies
+- HTML
+- CSS
+- jQuery
+- parcel
+- eslint
+- stylelint
 
-HTML
-CSS
-JavaScript
-Prettier for HTML (standard rules)
-Stylelint for CSS (rules are in the repository)
-ESLint for JavaScript (rules are in the repository)
 
-## Which API the project uses
+## Functionality
 
-none
+- add new items
+- remove items
+- mark items as done
+- move them around (touch support given)
+
+
+## Get started
+
+You can start a development server on `http://localhost:1234/` via `npm run dev`.
