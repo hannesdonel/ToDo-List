@@ -58,7 +58,7 @@ function newItem() {
   }
 
   // Reordering the items
-  $( "#list" ).sortable();
+  $( "#list" ).draggable();
   function holdItem() {
     li.css( "cursor", "grabbing" );
   }
