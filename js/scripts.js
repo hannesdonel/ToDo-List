@@ -40,7 +40,7 @@ function newItem() {
   if ( validation ) {
     li.addClass( "add" );
     list.append( li );
-    setTimeout( () => li.removeClass( "add" ), 250 );
+    setTimeout( () => li.removeClass( "add" ), 300 );
     clearInput();
     $( "#button" ).css( "background-color", "#fc999b" );
     validation = false;
@@ -71,7 +71,7 @@ function newItem() {
       }, 250 );
       setTimeout( () => {
         li.removeClass( "toList" );
-      }, 1250 );
+      }, 1400 );
       li.toggleClass( "strike" );
     }
   }
